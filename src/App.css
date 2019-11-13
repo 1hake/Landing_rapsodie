@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+@font-face {
+  font-family: "MyTechnotot";
+  src: local("Technotot"), url(./assets/fonts/Technotot.otf) format("otf");
+}
