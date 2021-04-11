@@ -15,7 +15,7 @@ function Contact(props) {
   const classes = useStyles();
   return (
     <p className={classes.container}>
-      {contact.text} <a href={contact.link}>{contact.linkText}</a>
+      {contact.text} <a href={contact.link}>{contact.linkText}Coloc RPZ</a>
     </p>
   );
 }

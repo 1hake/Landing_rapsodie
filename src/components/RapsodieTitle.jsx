@@ -7,6 +7,7 @@ const useStyles = makeStyles({
   container: {
     transition: "0.1s ease",
     width: "70%",
+    height: "100px",
     fontSize: "1.25rem",
     fontFamily: "Barlow",
     display: "flex",
@@ -16,34 +17,60 @@ const useStyles = makeStyles({
   Rimage: {
     height: "70px",
     marginRight: "-20px",
-    marginTop: "-30px",
-    transition: "0.1s ease"
+    marginTop: "-25px",
+    transition: "0.7s ease"
   },
   Simage: {
     height: "70px",
     marginLeft: "-10px",
-    marginBottom: "-30px"
+    marginBottom: "-25px",
+    transition: "0.7s ease"
+  },
+  RimageClose: {
+    height: "70px",
+    transition: "0.7s ease",
+    marginRight: "-10px",
+    marginBottom: "2px"
+  },
+  SimageClose: {
+    height: "70px",
+    transition: "0.7s ease",
+    marginLeft: "-10px",
+    marginTop: "0px"
   },
   title: {
     fontSize: "1.7em",
     fontWeight: "bold",
-    transition: "0.1s ease"
+    transition: "0.7s ease",
+    color: "white"
+  },
+  titleClose: {
+    fontSize: "0em",
+    fontWeight: "bold",
+    transition: "0.7s ease",
+    color: "white"
   }
 });
 
 function RapsodieTitle(props) {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+  setTimeout(function() {
+    setIsOpen(!isOpen);
+  }, 1000);
 
   return (
     <div className={classes.container}>
       <img
-        className={classes.Rimage}
+        className={isOpen ? classes.Rimage : classes.RimageClose}
         src={require("../assets/img/rWhite.png")}
         alt=""
       />
-      <p className={classes.title}>Rap X Data</p>
+      <p className={isOpen ? classes.title : classes.titleClose}>
+        {props.text}
+      </p>
       <img
-        className={classes.Simage}
+        className={isOpen ? classes.Simage : classes.SimageClose}
         src={require("../assets/img/sWhite.png")}
         alt=""
       />
